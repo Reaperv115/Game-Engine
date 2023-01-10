@@ -109,62 +109,6 @@ bool Model::loadModel(const std::string& filepath)
 		
 	}
 
-	/*FILE* file;
-	fopen_s(&file, filepath.c_str(), "r");
-
-	if (file == NULL)
-	{
-		ErrorLogger::Log("could not open model file");
-		return false;
-	}
-
-	while (1)
-	{
-		char lineHeader[128];
-
-		int res = fscanf_s(file, "%s", lineHeader, 128);
-		if (res == EOF)
-			break;
-		if (strcmp(lineHeader, "v") == 0)
-		{
-			XMFLOAT3 vertex;
-			fscanf_s(file, "%f %f %f\n", &vertex.x, &vertex.y, &vertex.z);
-			vertexPositions.push_back(vertex);
-		}
-		else if (strcmp(lineHeader, "vt") == 0)
-		{
-			XMFLOAT2 texcoord;
-			fscanf_s(file, "%f %f\n", &texcoord.x, &texcoord.y);
-			vertexTexcoord.push_back(texcoord);
-		}
-		else if (strcmp(lineHeader, "vn") == 0)
-		{
-			XMFLOAT3 normal;
-			fscanf_s(file, "%f %f %f\n", &normal.x, &normal.y, &normal.z);
-			vertexNormals.push_back(normal);
-		}
-		else if (strcmp(lineHeader, "f") == 0)
-		{
-			std::string vertex1, vertex2, vertex3;
-			DWORD vertexIndex[3], uvIndex[3], normalIndex[3];
-			int matches = fscanf_s(file, "%d/%d/%d %d/%d/%d %d/%d/%d\n", &vertexIndex[0], &uvIndex[0], &normalIndex[0], &vertexIndex[1], &uvIndex[1], &normalIndex[1], &vertexIndex[2], &uvIndex[2], &normalIndex[2]);
-			if (matches != 9)
-			{
-				ErrorLogger::Log("file can't be read properly");
-				return false;
-			}
-			vertexposIndices.push_back(vertexIndex[0]);
-			vertexposIndices.push_back(vertexIndex[1]);
-			vertexposIndices.push_back(vertexIndex[2]);
-			vertextexIndices.push_back(uvIndex[0]);
-			vertextexIndices.push_back(uvIndex[1]);
-			vertextexIndices.push_back(uvIndex[2]);
-			vertexnormalIndices.push_back(normalIndex[0]);
-			vertexnormalIndices.push_back(normalIndex[1]);
-			vertexnormalIndices.push_back(normalIndex[2]);
-		}
-	}*/
-
 	vertices.resize(vertexposIndices.size(), Vertex());
 	for (int i = 0; i < vertexposIndices.size(); ++i)
 	{

@@ -33,7 +33,7 @@ void Graphics::Render()
 	this->devicecontext->ClearDepthStencilView(this->depthstencilView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
 	this->devicecontext->IASetInputLayout(this->vertexshader.getLayout());
-	this->devicecontext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY::D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	this->devicecontext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 	this->devicecontext->OMSetDepthStencilState(this->depthstencilState.Get(), 0);
 	this->devicecontext->PSSetSamplers(0, 1, this->samplerState.GetAddressOf());
 	this->devicecontext->VSSetShader(this->vertexshader.getShader(), NULL, 0);

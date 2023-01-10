@@ -7,5 +7,5 @@ public:
 	bool ProcessMessages();
 	void Update();
 	void Render();
-	void releaseData();
+	void ReleaseData();
 };
