@@ -40,7 +40,7 @@ void Graphics::Render()
 	this->devicecontext->PSSetShader(this->pixelshader.getShader(), NULL, 0);
 
 	
-	this->model.Draw(camera.getviewMat() * camera.getprojectionMat());
+	this->model.Draw(camera.GetViewMat() * camera.GetProjectionMat());
 	
 
 	UINT offset = 0;
@@ -279,8 +279,8 @@ bool Graphics::InitializeScene()
 	if (!model.Initialize("untitled.obj", this->device.Get(), this->devicecontext.Get(), this->slayersmark.Get(), VSconstantBuffer))
 		return false;
 
-	camera.setPosition(0.0f, 0.0f, -2.0f);
-	camera.setprojectionValues(90.0f, static_cast<float>(windowwidth) / static_cast<float>(windowheight), 0.1f, 1000.0f);
+	camera.SetPosition(0.0f, 0.0f, -2.0f);
+	camera.SetProjectionValues(90.0f, static_cast<float>(windowwidth) / static_cast<float>(windowheight), 0.1f, 1000.0f);
 
 	return true;
 }

@@ -5,33 +5,35 @@ class Camera
 {
 public:
 	Camera();
-	void setprojectionValues(float fovdegs, float aspectrat, float nearz, float farz);
+	void SetProjectionValues(float fovdegs, float aspectrat, float nearz, float farz);
 
-	const XMMATRIX& getviewMat() const;
-	const XMMATRIX& getprojectionMat() const;
+	const XMMATRIX& GetViewMat() const;
+	const XMMATRIX& GetProjectionMat() const;
 	
-	const XMVECTOR& getposVector() const;
-	const XMFLOAT3& getposFloat3() const;
-	const XMVECTOR& getrotationVector() const;
-	const XMFLOAT3& getrotationFloat3() const;
+	const XMVECTOR& GetPosVector() const;
+	const XMFLOAT3& GetPosFloat3() const;
+	const XMVECTOR& GetRotationVector() const;
+	const XMFLOAT3& GetRotationFloat3() const;
 
-	void setPosition(const XMVECTOR& pos);
-	void setPosition(const XMFLOAT3& pos);
-	void setPosition(float x, float y, float z);
-	void adjustPosition(const XMVECTOR& pos);
-	void adjustPosition(const XMFLOAT3& pos);
-	void adjustPosition(float x, float y, float z);
-	void setRotation(const XMVECTOR& rot);
-	void setRotation(const XMFLOAT3& rot);
-	void setRotation(float x, float y, float z);
-	void adjustRotation(const XMVECTOR& rot);
-	void adjustRotation(const XMFLOAT3& rot);
-	void adjustRotation(float x, float y, float z);
-	void setlookatPos(XMFLOAT3 lookatPos);
-	const XMVECTOR& getforwardVector();
-	const XMVECTOR& getrightVector();
-	const XMVECTOR& getbackwardVector();
-	const XMVECTOR& getleftVector();
+	void SetPosition(const XMVECTOR& pos);
+	void SetPosition(const XMFLOAT3& pos);
+	void SetPosition(float x, float y, float z);
+	void SetRotation(const XMVECTOR& rot);
+	void SetRotation(const XMFLOAT3& rot);
+	void SetRotation(float x, float y, float z);
+	void SetookatPos(XMFLOAT3 lookatPos);
+	void AdjustPosition(const XMVECTOR& pos);
+	void AdjustPosition(const XMFLOAT3& pos);
+	void AdjustPosition(float x, float y, float z);
+	void AdjustRotation(const XMVECTOR& rot);
+	void AdjustRotation(const XMFLOAT3& rot);
+	void AdjustRotation(float x, float y, float z);
+	const XMVECTOR& GetForwardVector();
+	const XMVECTOR& GetRightVector();
+	const XMVECTOR& GetBackwardVector();
+	const XMVECTOR& GetLeftVector();
+	const XMVECTOR& GetUpVector();
+	const XMVECTOR& GetDownVector();
 
 private:
 	void UpdateViewMat();
@@ -52,5 +54,7 @@ private:
 	XMVECTOR vecLeft;
 	XMVECTOR vecRight;
 	XMVECTOR vecBackward;
+	XMVECTOR vecUpward;
+	XMVECTOR vecDownward;
 };
 
